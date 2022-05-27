@@ -1,0 +1,7 @@
+.metadata
+Pipfile.lock
+addons-custom-*
+addons-deprecated
+temp
+filestore
+ooproxy
