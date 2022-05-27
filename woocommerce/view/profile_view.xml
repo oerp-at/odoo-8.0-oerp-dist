@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+    <record id="form_wc_profile" model="ir.ui.view">
+      <field name="name">wc.form_wc_profile</field>
+      <field name="model">wc.profile</field>
+      <field name="arch" type="xml">
+        <form string="Profile">
+          <header>
+            <button type="object" name="action_activate" states="draft" string="Activate" class="oe_highlight"/>
+            <button type="object" name="action_schedule_sync" states="active" string="Schedule Sync" class="oe_highlight"/>
+            <button type="object" name="action_sync" states="active" string="Synchronize"/>            
+            <button type="object" name="action_draft" states="active" string="Reset Draft"/>
+            <field name="state" widget="statusbar" statusbar_visible="draft,active"/>
+          </header>
+          <sheet string="Profile">
+            <group>
+              <group>
+                <field name="company_id" widget="selection" groups="base.group_multi_company"/>
+                <field name="name"/>
+                <field name="url"/>
+              </group>
+              <group>
+                <field name="enabled"/>
+                <field name="consumer_key"/>
+                <field name="consumer_secret"/>
+                <field name="webhook_url"/>
+                <field name="webhook_secret"/>
+              </group>
+              <group>
+                <field name="user_template_id"/>
+                <field name="order_template_id"/>                
+              </group>
+              <group>
+                <field name="dummy_product_tmpl_id"/>
+                <field name="coupon_product_id"/>
+                <field name="delivery_product_id"/>
+              </group>              
+            </group>
+            <div>
+            <notebook>
+              <page string="Checkpoints">
+                <group> 
+                  <group>
+                    <field name="upload_order"/>
+                  </group>
+                  <group>
+                    <field name="sync_error"/>
+                  </group>
+                </group>
+                <field name="checkpoint_ids">
+                  <tree editable="bottom">
+                    <field name="name"/>
+                    <field name="ts"/>
+                  </tree>
+                </field>
+              </page>      
+              <page string="Payment Methods">
+                <field name="payment_ids">
+                  <tree editable="bottom">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="journal_id"/>
+                    <field name="code"/>
+                    <field name="order_policy"/>
+                  </tree>
+                </field>
+              </page>          
+            </notebook>
+            </div>
+          </sheet>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+            <field name="message_ids" widget="mail_thread"/>
+          </div>
+        </form>
+      </field>
+    </record>
+
+    <record id="tree_wc_profile" model="ir.ui.view">
+      <field name="name">wc.tree_wc_profile</field>
+      <field name="model">wc.profile</field>
+      <field name="arch" type="xml">
+        <tree string="Profiles">
+          <field name="company_id" widget="selection" groups="base.group_multi_company"/>
+          <field name="name"/>
+          <field name="url"/>
+          <field name="state"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="search_wc_profile" model="ir.ui.view">
+      <field name="name">wc.search_wc_profile</field>
+      <field name="model">wc.profile</field>
+      <field name="arch" type="xml">
+        <search string="Profile">
+          <field name="name"/>          
+        </search>
+      </field>
+    </record>
+
+    <record id="action_wc_profile" model="ir.actions.act_window">
+      <field name="name">Profile</field>
+      <field name="res_model">wc.profile</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>    
+    </record>
+
+    <menuitem id="menu_wc_profile" name="WooCommerce" parent="base.menu_base_config"     
+      sequence="23"
+      action="action_wc_profile"/>
+      
+  </data>
+</openerp>

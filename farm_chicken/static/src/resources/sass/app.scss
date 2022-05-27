@@ -1,0 +1,201 @@
+// The following two lines import the default Sencha Touch theme. If you are building
+// a new theme, remove them and the add your own CSS on top of the base CSS (which
+// is already included in your app.json file).
+@import 'sencha-touch/default';
+@import 'sencha-touch/default/all';
+
+// Custom code goes here..
+
+// Examples of using the icon mixin:
+// @include icon('user');
+
+$custom-grey: #4d4d4d;
+$custom-lightgreen: #eeffaa;   // 238,255,170
+$custom-lightestgreen: #f6ffd5;  // 246,255,213
+$custom-green: #256235;
+$custom-lightestyellow: #fdf7e0; 
+
+// ******************************************************************
+// BUGFIXES
+// ******************************************************************
+
+.x-container {   
+  touch-action: none;
+}
+
+// Overrides
+
+.x-form-label {    
+    min-width: 160px;
+    
+    @media only screen and (min-width: 601px) {
+        font-size: 1.2em;
+    }
+}
+
+.x-form-field {
+    @media only screen and (min-width: 601px) {
+        font-size: 1.2em;
+    }
+}
+
+
+// Items
+
+.ListItem {
+    @media only screen and (min-width: 601px) {
+        font-size: 1.2em;
+    }   
+}
+
+.WeekItem {
+    @extend .ListItem;
+    padding: 12px;
+    display: table; 
+}
+
+.WeekItemValid {
+    @extend .WeekItem;
+    background-color: $custom-lightgreen;
+}
+
+.ProductionItem {
+    @extend .ListItem;
+}
+
+
+.DayItem {    
+}
+div.DayItem > div.x-innerhtml {
+    padding: 0px !important;
+}
+
+
+.DayItemNormal {    
+    @extend .ListItem;    
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    display: table;
+}
+
+.DayItemFilled {
+    @extend .DayItemNormal;
+    background-color: $custom-lightestyellow;
+};
+
+.DayItemValid {
+    @extend .DayItemNormal;
+    background-color: $custom-lightestgreen;
+};
+
+
+// Week
+
+.WeekNameHeader {
+    font-weight: bold;
+    
+    @media only screen and (max-width: 600px) {
+        font-size: 0.9em;
+    }
+}
+
+.WeekNameLabel {
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 0.8em;   
+}
+
+.WeekInfo {
+    float: left;
+    min-width: 120px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 0.9em;
+    
+    @media only screen and (max-width: 600px) {
+        font-size: 0.76em;
+        min-width: 68px;
+        width: 68px;   
+    }
+}
+
+.WeekInfoValue {
+    @media only screen and (max-width: 600px) {
+        font-size: 0.76em;
+        min-width: 56px;
+    }
+}
+
+.WeekInfoLabel {
+    font-size: 0.7em;
+    color: $custom-grey;    
+    
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    
+    @media only screen and (max-width: 600px) {
+        font-size: 0.56em;
+        min-width: 56px;
+        
+    }
+}
+
+.DayInfo {
+    float: left;
+    min-width: 80px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 2px;
+    padding-bottom: 6px;
+    font-size: 0.7em;
+    
+    @media only screen and (max-width: 600px) {
+        font-size: 0.7em;
+        min-width: 58px;
+        width: 58px;   
+    }
+}
+
+.DayName {
+    @media only screen and (max-width: 600px) {
+        font-size: 0.8em;
+    }   
+}
+
+.DayInfoValue {
+    @media only screen and (max-width: 600px) {
+        font-size: 0.76em;
+        min-width: 52px;
+    }
+}
+
+.DayInfoLabel {
+    font-size: 0.6em;
+    color: $custom-grey;    
+    
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    
+    @media only screen and (max-width: 600px) {
+        font-size: 0.56em;
+        min-width: 52px;
+    }
+}
+
+.WeekSelHeader {
+}
+
+.WeekSelLabel {
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 0.8em;   
+}
+
+
