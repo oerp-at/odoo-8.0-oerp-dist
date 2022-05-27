@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+    <record id="form_account_period_entry" model="ir.ui.view">
+      <field name="name">account_period.form_account_period_entry</field>
+      <field name="model">account.period.entry</field>
+      <field name="arch" type="xml">
+        <form string="Period Entry">
+            <header>
+                <button type="object" name="action_validate" class="oe_highlight" string="Validate" attrs="{'invisible':[('user_id','!=',False)]}"/>
+                <button type="object" name="action_wrong" string="Wrong" attrs="{'invisible':[('user_id','!=',False)]}"/>
+                <button type="object" name="action_reset" string="Reset" attrs="{'invisible':[('user_id','=',False)]}"/>
+                <button type="object" name="action_print" string="Print"/>
+                <button type="object" name="action_open" string="Open"/>
+                <button type="object" name="action_open_move" string="Open Move"/>
+                <field name="state" widget="statusbar" statusbar_visible="draft,valid" statusbar_colors='{"draft":"blue"}'/>
+            </header>
+            <sheet>
+                <div class="oetitle oe_left">
+                  <h1>
+                    <field name="move_id"/>
+                  </h1>                              
+                </div>
+                <div class="oe_right">
+                </div>
+                <group>
+                    <group>
+                        <field name="task_id"/>
+                        <field name="date"/> 
+                        <field name="name"/>                 
+                    </group>
+                    <group>
+                        <field name="journal_id"/>
+                        <field name="account_id"/>
+                        <field name="move_id"/>
+                        <field name="st_line_id" attrs="{'invisible':[('st_line_id','=',False)]}"/>                        
+                        <field name="invoice_id" attrs="{'invisible':[('invoice_id','=',False)]}"/>
+                        <field name="voucher_id" attrs="{'invisible':[('voucher_id','=',False)]}"/>
+                    </group>            
+                    <group>
+                        <field name="currency_id" invisible="1"/>                        
+                        <field name="amount_net" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                        <field name="amount_base" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                        <field name="amount_tax" widget="monetary" options="{'currency_field': 'currency_id'}"/>                       
+                        <field name="amount_gross" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                        <field name="sign"/>
+                    </group>
+                    <group>
+                        <field name="payment_date"/>
+                        <field name="payment_state"/>
+                        <field name="refund"/>
+                        <field name="auto"/>
+                    </group>
+                    <group>                        
+                        <field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>                        
+                        <field name="payment_rate"/>
+                        <field name="payment_amount"/>
+                        <field name="tax_id"/>                        
+                    </group>
+                    <group>
+                        <field name="tax_base_id"/>
+                        <field name="tax_code_id"/>
+                        <field name="user_id" attrs="{'invisible':[('user_id','=',False)]}"/>                        
+                    </group>
+                </group>
+            </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="tree_account_period_entry" model="ir.ui.view">
+      <field name="name">account_period.tree_account_period_entry</field>
+      <field name="model">account.period.entry</field>
+      <field name="arch" type="xml">
+        <tree string="Period Entries" colors="blue:state == 'draft';red:state == 'wrong';grey:state == 'invalid'">
+            <field name="task_id"/>
+            <field name="date"/>            
+            <field name="move_id"/>
+            <field name="name"/>
+            <field name="journal_id"/>
+            <field name="account_id"/>
+            <field name="tax_id"/>
+            <field name="amount_net" sum="Net Total"/>
+            <field name="amount_tax" sum="Tax Total"/>
+            <field name="amount_gross" sum="Gross Total"/>
+            <field name="payment_amount" sum="Total Payment"/>
+            <field name="payment_state"/>
+            <field name="refund"/>
+            <field name="user_id"/>
+            <field name="state" invisible="1"/>
+            <button type="object" name="action_validate" icon="STOCK_APPLY" attrs="{'invisible':[('user_id','!=',False)]}"/>
+            <button type="object" name="action_wrong" icon="STOCK_CANCEL" attrs="{'invisible':[('user_id','!=',False)]}"/>
+            <button type="object" name="action_reset" icon="STOCK_REDO" attrs="{'invisible':[('user_id','=',False)]}"/>
+            <button type="object" name="action_print" icon="STOCK_PRINT"/>
+            <button type="object" name="action_open" icon="STOCK_FIND"/>
+            <button type="object" name="action_open_move" icon="STOCK_FILE"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="search_account_period_entry" model="ir.ui.view">
+      <field name="name">account_period.search_account_period_entry</field>
+      <field name="model">account.period.entry</field>
+      <field name="arch" type="xml">
+        <search string="Period Entry">
+            <field name="move_id"/>
+            <field name="task_id"/>
+            <field name="journal_id"/>
+            <field name="account_id"/>
+            <field name="invoice_id"/>
+            <field name="voucher_id"/>
+            <field name="tax_id"/>
+            <field name="user_id"/>
+            <field name="tax_code_id"/>
+            <field name="tax_base_id"/>
+            <field name="st_line_id"/>            
+            <separator/>
+            <filter string="Open" domain="[('payment_state','=','open')]"/>
+            <filter string="Partly Paid" domain="[('payment_state','=','part')]"/>
+            <filter string="Paid" domain="[('payment_state','=','paid')]"/>
+            <separator/>
+            <filter string="Draft" domain="[('state','=','draft')]"/>
+            <filter string="Valid" domain="[('state','=','valid')]"/>
+            <filter string="Wrong" domain="[('state','=','wrong')]"/>            
+            <separator/>
+            <filter string="Refund" domain="[('refund','=',True)]"/>
+            <filter string="No Refund" domain="[('refund','=',False)]"/>
+            <separator/>
+            <filter string="Negative" domain="[('sign','&lt;',0)]"/>
+            <filter string="Positive" domain="[('sign','&gt;',0)]"/>
+            <separator/>
+            <filter string="Auto" domain="[('auto','=',True)]"/>
+            <filter string="Non Auto" domain="[('auto','=',False)]"/>
+            <separator/>
+            <group expand="0" string="Group By...">
+              <filter string="Status" context="{'group_by': 'state'}"/>
+              <filter string="Payment" context="{'group_by': 'payment_state'}"/>
+              <filter string="Audited By" context="{'group_by': 'user_id'}"/>
+              <filter string="Tax" context="{'group_by': 'tax_id'}"/>              
+              <filter string="Account" context="{'group_by': 'account_id'}"/>
+              <filter string="Invoice" context="{'group_by': 'invoice_id'}"/>
+              <filter string="Receipt" context="{'group_by': 'voucher_id'}"/>
+              <filter string="Tax Base" context="{'group_by': 'tax_base_id'}"/>
+              <filter string="Tax Code" context="{'group_by': 'tax_code_id'}"/>
+              <filter string="Journal" context="{'group_by': 'journal_id'}"/>
+            </group>
+        </search>
+      </field>
+    </record>
+
+    <record id="action_account_period_entry" model="ir.actions.act_window">
+      <field name="name">Period Entry</field>
+      <field name="res_model">account.period.entry</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- menuitem id="menu_account_period_entry" name="Period Entry" parent="parent"
+      sequence="10"
+      action="action_account_period_entry"/-->
+  </data>
+</openerp>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+ <data>
+ 
+    <record id="form_tax" model="ir.ui.view">
+      <field name="name">at_bmd.form_tax</field>
+      <field name="model">account.tax</field>
+      <field name="inherit_id" ref="account.view_tax_form"/>
+      <field name="arch" type="xml">
+        <field name="tax_sign" position="after">
+          <field name="bmd_steucod"/>
+        </field>
+        <field name="ref_tax_sign" position="after">
+          <field name="ref_bmd_steucod"/>
+        </field>
+      </field>
+    </record>
+    
+  </data>
+</openerp>

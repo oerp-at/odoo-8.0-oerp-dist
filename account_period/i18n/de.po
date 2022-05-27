@@ -1,0 +1,847 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_period
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Language: de_DE\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-26 14:03+0000\n"
+"PO-Revision-Date: 2021-07-26 14:03+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_period
+#: field:account.period.balance,account_id:0
+#: view:account.period.entry:account_period.search_account_period_entry
+#: field:account.period.entry,account_id:0
+#: model:ir.model,name:account_period.model_account_account
+msgid "Account"
+msgstr "Konto"
+
+#. module: account_period
+#: field:account.period.task,balance_ids:0
+#: model:ir.model,name:account_period.model_account_period_balance
+msgid "Account Balance"
+msgstr "Kontensaldo"
+
+#. module: account_period
+#: code:addons/account_period/models/period_task.py:258
+#, python-format
+msgid "Account Statement"
+msgstr "Bankauszug"
+
+#. module: account_period
+#: field:account.period.task,account_statement_count:0
+msgid "Account Statements"
+msgstr "Bankauszüge"
+
+#. module: account_period
+#: field:account.period.task,balance_count:0
+msgid "Accounts"
+msgstr "Konten"
+
+#. module: account_period
+#: field:account.period.entry,amount:0
+msgid "Amount"
+msgstr "Betrag"
+
+#. module: account_period
+#: view:account.period.entry:account_period.search_account_period_entry
+msgid "Audited By"
+msgstr "Geprüft von"
+
+#. module: account_period
+#: field:account.period.entry,user_id:0
+msgid "Audited by"
+msgstr "Geprüft von"
+
+#. module: account_period
+#: view:account.period.entry:account_period.search_account_period_entry
+msgid "Auto"
+msgstr "Autom."
+
+#. module: account_period
+#: field:account.period.entry,auto:0
+msgid "Auto Generated"
+msgstr "Autom. Erzeugt"
+
+#. module: account_period
+#: view:account.period.balance:account_period.account_period_balance_view_tree
+#: field:account.period.balance,balance:0
+#: code:addons/account_period/models/period_task.py:240
+#, python-format
+msgid "Balance"
+msgstr "Saldo"
+
+#. module: account_period
+#: view:account.period.task:account_period.form_period_task
+msgid "Balances"
+msgstr "Salden"
+
+#. module: account_period
+#: field:account.period.tax,amount_base:0
+msgid "Base Amount"
+msgstr "Bemessungsgrundl."
+
+#. module: account_period
+#: field:account.period.task,child_task_ids:0
+msgid "Child Tasks"
+msgstr "Untergeordnete Prozesse"
+
+#. module: account_period
+#: view:account.period.validate.wizard:account_period.account_period_validate_wizard_view_form
+msgid "Close"
+msgstr "Schließen"
+
+#. module: account_period
+#: field:account.tax.code,tax_sign:0
+msgid "Coefficent for Tax"
+msgstr "Vorzeichen Steuerabgabe"
+
+#. module: account_period
+#: help:account.tax.code,tax_sign:0
+msgid "Coefficent for Tax: 1.0 is a tax levy addition, -1.0 is a tax levy reduction."
+msgstr "Vorzeichen für Steuerabgabe: 1.0 erhöht die Abgabe, -1.0 reduziert die Abgabe."
+
+#. module: account_period
+#: model:ir.model,name:account_period.model_res_company
+msgid "Companies"
+msgstr "Unternehmen"
+
+#. module: account_period
+#: view:account.period.task:account_period.search_period_task
+#: field:account.period.task,company_id:0
+msgid "Company"
+msgstr "Firma"
+
+#. module: account_period
+#: field:account.period.balance,create_uid:0
+#: field:account.period.entry,create_uid:0
+#: field:account.period.task,create_uid:0
+#: field:account.period.tax,create_uid:0
+#: field:account.period.validate.wizard,create_uid:0
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: account_period
+#: field:account.period.balance,create_date:0
+#: field:account.period.entry,create_date:0
+#: field:account.period.task,create_date:0
+#: field:account.period.tax,create_date:0
+#: field:account.period.validate.wizard,create_date:0
+msgid "Created on"
+msgstr "Erstellt am"
+
+#. module: account_period
+#: view:account.period.balance:account_period.account_period_balance_view_tree
+#: field:account.period.balance,credit:0
+msgid "Credit"
+msgstr "Haben"
+
+#. module: account_period
+#: field:account.account,credit_tax_code_id:0
+msgid "Credit Tax Code"
+msgstr "Soll Steuercode"
+
+#. module: account_period
+#: field:account.period.entry,currency_id:0
+#: field:account.period.task,currency_id:0
+#: field:account.period.tax,currency_id:0
+msgid "Currency"
+msgstr "Währung"
+
+#. module: account_period
+#: field:account.period.entry,date:0
+msgid "Date"
+msgstr "Datum"
+
+#. module: account_period
+#: help:account.period.task,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Datum der letzten Nachricht."
+
+#. module: account_period
+#: view:account.period.balance:account_period.account_period_balance_view_tree
+#: field:account.period.balance,debit:0
+msgid "Debit"
+msgstr "Soll"
+
+#. module: account_period
+#: field:account.account,debit_tax_code_id:0
+msgid "Debit Tax Codd"
+msgstr "Haben Steuercode"
+
+#. module: account_period
+#: help:account.account,private_usage:0
+msgid "Define private usage between 0.0 - 1.0.\n"
+"0.0 means no private usage.\n"
+"1.0 means 100% private usage"
+msgstr "Definiert die Privatnutzung zwischen 0.0 -1.0\n"
+"0.0 heißt keine Privatnutzung.\n"
+"1.0 heißt 100% Privatnutzung."
+
+#. module: account_period
+#: field:account.period.balance,display_name:0
+#: field:account.period.entry,display_name:0
+#: field:account.period.task,display_name:0
+#: field:account.period.tax,display_name:0
+#: field:account.period.validate.wizard,display_name:0
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: account_period
+#: selection:account.period.entry,payment_state:0
+msgid "Done"
+msgstr "Erledigt"
+
+#. module: account_period
+#: view:account.period.entry:account_period.search_account_period_entry
+#: selection:account.period.entry,state:0
+msgid "Draft"
+msgstr "Entwurf"
+
+#. module: account_period
+#: view:account.period.task:account_period.form_period_task
+#: field:account.period.task,entry_count:0
+#: field:account.period.task,entry_ids:0
+#: view:account.period.tax:account_period.form_account_period_tax
+#: field:account.period.tax,entry_count:0
+#: field:account.period.tax,entry_ids:0
+#: code:addons/account_period/models/period_task.py:216
+#: code:addons/account_period/models/period_task.py:1479
+#, python-format
+msgid "Entries"
+msgstr "Einträge"
+
+#. module: account_period
+#: view:account.period.validate.wizard:account_period.account_period_validate_wizard_view_form
+msgid "Entry Validation"
+msgstr "Eintrag Validierung"
+
+#. module: account_period
+#: field:account.period.task,error:0
+msgid "Error"
+msgstr "Fehler"
+
+#. module: account_period
+#: field:account.period.task,message_follower_ids:0
+msgid "Followers"
+msgstr "Beobachter"
+
+#. module: account_period
+#: code:addons/account_period/models/period_task.py:752
+#, python-format
+msgid "Foreign taxes not allowed for local moves"
+msgstr "Importsteuern sind nicht erlaubt in lokalen Buchungen"
+
+#. module: account_period
+#: code:addons/account_period/models/period_task.py:655
+#, python-format
+msgid "Foreign taxes not allowed for local receipts"
+msgstr "Importsteuern sind nicht erlaubt in lokalen Belegen"
+
+#. module: account_period
+#: field:account.period.entry,amount_gross:0
+msgid "Gross Amount"
+msgstr "Brutto Betrag"
+
+#. module: account_period
+#: view:account.period.entry:account_period.tree_account_period_entry
+msgid "Gross Total"
+msgstr "Brutto Gesamt"
+
+#. module: account_period
+#: view:account.period.balance:account_period.account_period_balance_search
+#: view:account.period.entry:account_period.search_account_period_entry
+#: view:account.period.tax:account_period.search_account_period_tax
+msgid "Group By..."
+msgstr "Groupiert nach..."
+
+#. module: account_period
+#: help:account.period.task,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Enthält die  Zusammenfassung (Anzahl der Nachrichten, ...). Diese Zusammenfassung ist direkt im html-Format, um in Kanbanansichten eingefügt werden zu können."
+
+#. module: account_period
+#: help:account.period.task,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "Wenn angekreuzt, ist es eine neue Nachricht."
+
+#. module: account_period
+#: field:account.tax,import_tax:0
+msgid "Import Tax"
+msgstr "Import Steuer"
+
+#. module: account_period
+#: view:account.period.entry:account_period.search_account_period_entry
+#: field:account.period.entry,invoice_id:0
+#: code:addons/account_period/models/period_task.py:1365
+#, python-format
+msgid "Invoice"
+msgstr "Rechnung"
+
+#. module: account_period
+#: field:account.period.task,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Ist Beobachter"
+
+#. module: account_period
+#: help:res.company,account_period_journal_id:0
+msgid "Journal for period automatic or manual bookings"
+msgstr "Journal für manuelle oder automatische periodische Buchungen"
+
+#. module: account_period
+#: field:account.period.task,message_last_post:0
+msgid "Last Message Date"
+msgstr "Datum der letzten Nachricht."
+
+#. module: account_period
+#: field:account.period.balance,__last_update:0
+#: field:account.period.entry,__last_update:0
+#: field:account.period.task,__last_update:0
+#: field:account.period.tax,__last_update:0
+#: field:account.period.validate.wizard,__last_update:0
+msgid "Last Modified on"
+msgstr "Letzte Änderung am"
+
+#. module: account_period
+#: field:account.period.balance,write_uid:0
+#: field:account.period.entry,write_uid:0
+#: field:account.period.task,write_uid:0
+#: field:account.period.tax,write_uid:0
+#: field:account.period.validate.wizard,write_uid:0
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert von"
+
+#. module: account_period
+#: field:account.period.balance,write_date:0
+#: field:account.period.entry,write_date:0
+#: field:account.period.task,write_date:0
+#: field:account.period.tax,write_date:0
+#: field:account.period.validate.wizard,write_date:0
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: account_period
+#: code:addons/account_period/models/period_task.py:1383
+#, python-format
+msgid "Line"
+msgstr "Zeile"
+
+#. module: account_period
+#: field:account.period.task,message_ids:0
+msgid "Messages"
+msgstr "Nachrichten"
+
+#. module: account_period
+#: help:account.period.task,message_ids:0
+msgid "Messages and communication history"
+msgstr "Nachrichten und Protokoll"
+
+#. module: account_period
+#: field:account.period.entry,move_id:0
+#: code:addons/account_period/models/period_task.py:1396
+#, python-format
+msgid "Move"
+msgstr "Buchung"
+
+#. module: account_period
+#: view:account.period.balance:account_period.account_period_balance_view_form
+#: field:account.period.balance,move_lines:0
+#: code:addons/account_period/models/period_task.py:1521
+#, python-format
+msgid "Move Lines"
+msgstr "Buchungen"
+
+#. module: account_period
+#: field:account.tax,national_tax_id:0
+msgid "National Tax"
+msgstr "Nationale Steuer"
+
+#. module: account_period
+#: view:account.period.entry:account_period.search_account_period_entry
+msgid "Negative"
+msgstr "Negativ"
+
+#. module: account_period
+#: field:account.period.entry,amount_net:0
+msgid "Net Amount"
+msgstr "Netto Betrag"
+
+#. module: account_period
+#: view:account.period.entry:account_period.tree_account_period_entry
+msgid "Net Total"
+msgstr "Netto Gesamt"
+
+#. module: account_period
+#: view:account.period.entry:account_period.search_account_period_entry
+msgid "No Refund"
+msgstr "Keine Gutschrift"
+
+#. module: account_period
+#: code:addons/account_period/models/period_task.py:930
+#, python-format
+msgid "No period booking journal was defined for company"
+msgstr "Es wurde kein Buchungsjournal für periodische Buchungen für dieses Unternehmen definiert"
+
+#. module: account_period
+#: view:account.period.entry:account_period.search_account_period_entry
+msgid "Non Auto"
+msgstr "Nicht Autom."
+
+#. module: account_period
+#: view:account.period.entry:account_period.form_account_period_entry
+#: view:account.period.entry:account_period.search_account_period_entry
+#: selection:account.period.entry,payment_state:0
+msgid "Open"
+msgstr "Offen"
+
+#. module: account_period
+#: view:account.period.entry:account_period.form_account_period_entry
+msgid "Open Move"
+msgstr "Öffne Buchungsatz"
+
+#. module: account_period
+#: field:account.period.task,owner_id:0
+msgid "Owner"
+msgstr "Eigentümer"
+
+#. module: account_period
+#: view:account.period.entry:account_period.search_account_period_entry
+msgid "Paid"
+msgstr "Bezahlt"
+
+#. module: account_period
+#: field:account.period.task,parent_id:0
+#: view:account.period.tax:account_period.search_account_period_tax
+#: field:account.period.tax,parent_id:0
+msgid "Parent"
+msgstr "Übergeordnet"
+
+#. module: account_period
+#: view:account.period.balance:account_period.account_period_balance_search
+#: field:account.period.balance,parent_account_id:0
+msgid "Parent Account"
+msgstr "Übergeordnetes Konto"
+
+#. module: account_period
+#: selection:account.period.entry,payment_state:0
+msgid "Partly"
+msgstr "Teilweise"
+
+#. module: account_period
+#: view:account.period.entry:account_period.search_account_period_entry
+msgid "Partly Paid"
+msgstr "Teilzahlung"
+
+#. module: account_period
+#: view:account.period.entry:account_period.search_account_period_entry
+#: field:account.period.entry,payment_amount:0
+msgid "Payment"
+msgstr "Zahlung"
+
+#. module: account_period
+#: field:account.period.entry,payment_date:0
+msgid "Payment Date"
+msgstr "Zahlungsdatum"
+
+#. module: account_period
+#: field:account.period.entry,payment_rate:0
+msgid "Payment Rate"
+msgstr "Zahlungsquote"
+
+#. module: account_period
+#: field:account.period.entry,payment_state:0
+msgid "Payment State"
+msgstr "Zahlungsstatus"
+
+#. module: account_period
+#: view:account.period.task:account_period.search_period_task
+#: field:account.period.task,period_id:0
+msgid "Period"
+msgstr "Periode"
+
+#. module: account_period
+#: view:account.period.balance:account_period.account_period_balance_view_form
+#: model:ir.actions.act_window,name:account_period.account_period_balance_action
+msgid "Period Balance"
+msgstr "Periodensaldo"
+
+#. module: account_period
+#: view:account.period.balance:account_period.account_period_balance_search
+msgid "Period Balances"
+msgstr "Periodensalden"
+
+#. module: account_period
+#: view:account.period.entry:account_period.tree_account_period_entry
+msgid "Period Entries"
+msgstr "Periodeneinträge"
+
+#. module: account_period
+#: view:account.period.entry:account_period.form_account_period_entry
+#: view:account.period.entry:account_period.search_account_period_entry
+#: model:ir.actions.act_window,name:account_period.action_account_period_entry
+#: model:ir.model,name:account_period.model_account_period_entry
+msgid "Period Entry"
+msgstr "Periodeneintrag "
+
+#. module: account_period
+#: field:res.company,account_period_journal_id:0
+msgid "Period Journal"
+msgstr "Journal für Periodenabschluss"
+
+#. module: account_period
+#: model:ir.actions.act_window,name:account_period.action_period_task
+#: model:ir.model,name:account_period.model_account_period_task
+#: model:ir.ui.menu,name:account_period.menu_period_task
+msgid "Period Processing"
+msgstr "Periodische Verarbeitung"
+
+#. module: account_period
+#: view:account.period.tax:account_period.form_account_period_tax
+#: view:account.period.tax:account_period.search_account_period_tax
+#: model:ir.actions.act_window,name:account_period.action_account_period_tax
+#: model:ir.model,name:account_period.model_account_period_tax
+msgid "Period Tax"
+msgstr "Periodensteuer"
+
+#. module: account_period
+#: view:account.period.tax:account_period.tree_account_period_tax
+msgid "Period Taxes"
+msgstr "Periodensteuern"
+
+#. module: account_period
+#: field:account.journal,periodic:0
+msgid "Periodic Processing"
+msgstr "Periodische Verarbeitung"
+
+#. module: account_period
+#: view:account.period.entry:account_period.search_account_period_entry
+msgid "Positive"
+msgstr "Positiv"
+
+#. module: account_period
+#: field:account.period.task,post_task_ids:0
+msgid "Post Tasks"
+msgstr "Folgeprozesse"
+
+#. module: account_period
+#: view:account.period.entry:account_period.form_account_period_entry
+msgid "Print"
+msgstr "Drucken"
+
+#. module: account_period
+#: field:account.account,private_account_id:0
+msgid "Private Account"
+msgstr "Privat Konto"
+
+#. module: account_period
+#: field:account.account,private_usage:0
+msgid "Private Usage"
+msgstr "Privatnutzung"
+
+#. module: account_period
+#: code:addons/account_period/models/period_task.py:976
+#: code:addons/account_period/models/period_task.py:990
+#: code:addons/account_period/models/period_task.py:1003
+#, python-format
+msgid "Private: %s"
+msgstr "Privat: %s"
+
+#. module: account_period
+#: field:account.period.task,progress:0
+msgid "Progress"
+msgstr "Fortschritt"
+
+#. module: account_period
+#: view:account.period.entry:account_period.search_account_period_entry
+#: field:account.period.entry,voucher_id:0
+#: code:addons/account_period/models/period_task.py:1374
+#, python-format
+msgid "Receipt"
+msgstr "Beleg"
+
+#. module: account_period
+#: view:account.period.entry:account_period.search_account_period_entry
+#: field:account.period.entry,refund:0
+msgid "Refund"
+msgstr "Gutschrift"
+
+#. module: account_period
+#: view:account.period.entry:account_period.form_account_period_entry
+#: view:account.period.validate.wizard:account_period.account_period_validate_wizard_view_form
+msgid "Reset"
+msgstr "Zurücksetzen"
+
+#. module: account_period
+#: field:account.period.task,res_ref:0
+msgid "Resource"
+msgstr "Ressource"
+
+#. module: account_period
+#: field:account.period.task,res_id:0
+msgid "Resource ID"
+msgstr "Ressource ID"
+
+#. module: account_period
+#: field:account.period.task,res_model:0
+msgid "Resource Model"
+msgstr "Ressource Model"
+
+#. module: account_period
+#: field:account.period.task,cron_id:0
+msgid "Scheduled Job"
+msgstr "Geplante Ausführung"
+
+#. module: account_period
+#: field:account.period.balance,sequence:0
+#: field:account.period.tax,sequence:0
+msgid "Sequence"
+msgstr "Sequenz"
+
+#. module: account_period
+#: field:account.period.entry,sign:0
+msgid "Sign"
+msgstr "Vorzeichen"
+
+#. module: account_period
+#: help:account.period.task,start_after:0
+msgid "Start *this* task after the specified date/time, was set to null after queued."
+msgstr "Starte *diesen* Prozess nach dem angegebenen Prozess. Wird nach dem starten auf Null gesetzt."
+
+#. module: account_period
+#: help:account.period.task,start_after_task_id:0
+msgid "Start *this* task after the specified task, was set to null after queued."
+msgstr "Starte *diesen* Prozess nach dem angegebenen Prozess. Wird nach dem starten auf Null gesetzt."
+
+#. module: account_period
+#: field:account.period.task,start_after:0
+msgid "Start After"
+msgstr "Starte nach"
+
+#. module: account_period
+#: field:account.period.task,start_after_task_id:0
+msgid "Start after task"
+msgstr "Starte nach Prozess"
+
+#. module: account_period
+#: field:account.period.task,state:0
+msgid "State"
+msgstr "Status"
+
+#. module: account_period
+#: field:account.period.task,state_change:0
+msgid "State Change"
+msgstr "Status Änderung"
+
+#. module: account_period
+#: field:account.period.entry,st_line_id:0
+msgid "Statement Line"
+msgstr "Kontoauszugszeile"
+
+#. module: account_period
+#: view:account.period.task:account_period.form_period_task
+msgid "Statements"
+msgstr "Auszüge"
+
+#. module: account_period
+#: field:account.period.task,message_summary:0
+msgid "Summary"
+msgstr "Übersicht"
+
+#. module: account_period
+#: field:account.period.balance,task_id:0
+#: field:account.period.entry,task_id:0
+#: field:account.period.task,task_id:0
+#: view:account.period.tax:account_period.search_account_period_tax
+#: field:account.period.tax,task_id:0
+msgid "Task"
+msgstr "Aufgabe"
+
+#. module: account_period
+#: help:account.period.task,child_task_ids:0
+msgid "Tasks which already started after this task."
+msgstr "Prozesse die nach diesem Prozess gestartet wurden."
+
+#. module: account_period
+#: help:account.period.task,post_task_ids:0
+msgid "Tasks which are started after this task."
+msgstr "Prozesse die nach diesem Prozess gestartet wurden."
+
+#. module: account_period
+#: view:account.period.entry:account_period.search_account_period_entry
+#: field:account.period.entry,tax_id:0
+#: view:account.period.task:account_period.form_period_task
+#: model:ir.model,name:account_period.model_account_tax
+msgid "Tax"
+msgstr "Steuer"
+
+#. module: account_period
+#: field:account.period.entry,amount_tax:0
+#: field:account.period.tax,amount_tax:0
+msgid "Tax Amount"
+msgstr "Steuerbetrag"
+
+#. module: account_period
+#: view:account.period.entry:account_period.search_account_period_entry
+#: field:account.period.entry,amount_base:0
+#: field:account.period.entry,tax_base_id:0
+msgid "Tax Base"
+msgstr "Bemessungsgrundlage"
+
+#. module: account_period
+#: view:account.period.entry:account_period.search_account_period_entry
+#: field:account.period.entry,tax_code_id:0
+#: model:ir.model,name:account_period.model_account_tax_code
+msgid "Tax Code"
+msgstr "Steuercode"
+
+#. module: account_period
+#: view:account.period.entry:account_period.tree_account_period_entry
+msgid "Tax Total"
+msgstr "Steuer Gesamt"
+
+#. module: account_period
+#: selection:res.company,taxation:0
+msgid "Tax after Payment"
+msgstr "Steuer nach Zahlung (Ist)"
+
+#. module: account_period
+#: help:account.period.tax,amount_base:0
+msgid "Tax base amount."
+msgstr "Steuer Bemessungsgrundlage."
+
+#. module: account_period
+#: selection:res.company,taxation:0
+msgid "Tax on Invoice"
+msgstr "Steuer nach Rechnung (Soll)"
+
+#. module: account_period
+#: field:res.company,taxation:0
+msgid "Taxation"
+msgstr "Besteuerung"
+
+#. module: account_period
+#: field:account.period.task,tax_ids:0
+#: code:addons/account_period/models/period_task.py:228
+#, python-format
+msgid "Taxes"
+msgstr "Steuern"
+
+#. module: account_period
+#: help:account.period.task,parent_id:0
+msgid "The parent task, after *this* task was started"
+msgstr "Der übergeordnete Prozess, nachdem *dieser* Prozess gestartet wude."
+
+#. module: account_period
+#: selection:account.tax,import_tax:0
+msgid "Third Country"
+msgstr "Drittland"
+
+#. module: account_period
+#: field:account.period.task,total_logs:0
+msgid "Total Logs"
+msgstr "Log Einträge"
+
+#. module: account_period
+#: view:account.period.entry:account_period.tree_account_period_entry
+msgid "Total Payment"
+msgstr "Zahlungen"
+
+#. module: account_period
+#: field:account.period.task,total_stages:0
+msgid "Total Stages"
+msgstr "Abschnitte"
+
+#. module: account_period
+#: field:account.period.task,tax_total:0
+msgid "Total Tax"
+msgstr "Steuern"
+
+#. module: account_period
+#: field:account.period.task,total_warnings:0
+msgid "Total Warnings"
+msgstr "Warnungen"
+
+#. module: account_period
+#: field:account.period.task,message_unread:0
+msgid "Unread Messages"
+msgstr "Ungelesene Nachrichten"
+
+#. module: account_period
+#: view:account.period.balance:account_period.account_period_balance_search
+msgid "Unused Accounts"
+msgstr "Unbenutzte Konten"
+
+#. module: account_period
+#: view:account.period.balance:account_period.account_period_balance_search
+msgid "Used Accounts"
+msgstr "Benutzte Konten"
+
+#. module: account_period
+#: view:account.period.entry:account_period.search_account_period_entry
+msgid "Valid"
+msgstr "Gültig"
+
+#. module: account_period
+#: view:account.period.entry:account_period.form_account_period_entry
+#: view:account.period.validate.wizard:account_period.account_period_validate_wizard_view_form
+msgid "Validate"
+msgstr "Validieren"
+
+#. module: account_period
+#: model:ir.model,name:account_period.model_account_period_validate_wizard
+msgid "Validate Wizard"
+msgstr "Validierungsassistent"
+
+#. module: account_period
+#: view:account.period.validate.wizard:account_period.account_period_validate_wizard_view_form
+msgid "Validate multiple entries"
+msgstr "Validiere mehrere Einträge"
+
+#. module: account_period
+#: selection:account.period.entry,state:0
+msgid "Validated"
+msgstr "Validiert"
+
+#. module: account_period
+#: code:addons/account_period/models/period_task.py:355
+#, python-format
+msgid "Validated entries already exist."
+msgstr "Es existieren validierte Einträge."
+
+#. module: account_period
+#: model:ir.actions.act_window,name:account_period.account_period_validate_wizard_act
+msgid "Validation"
+msgstr "Validierung"
+
+#. module: account_period
+#: view:account.period.entry:account_period.form_account_period_entry
+#: view:account.period.entry:account_period.search_account_period_entry
+#: selection:account.period.entry,state:0
+msgid "Wrong"
+msgstr "Falsch"
+
+#. module: account_period
+#: code:addons/account_period/models/period_task.py:1346
+#, python-format
+msgid "You must be an accountant manager to do that."
+msgstr "Sie müssen ein Finanzmanager sein um das auszuführen."
+
+#. module: account_period
+#: code:addons/account_period/models/period_task.py:1321
+#, python-format
+msgid "You must be an accountant to do that."
+msgstr "Sie müssen ein Finanzbenutzer sein um das auszuführen."
+
+#. module: account_period
+#: view:account.period.validate.wizard:account_period.account_period_validate_wizard_view_form
+msgid "or"
+msgstr "oder"
+
