@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+  
+    <record id="form_fclipboard_item" model="ir.ui.view">
+      <field name="name">fclipboard.form_fclipboard_item</field>
+      <field name="model">fclipboard.item</field>
+      <field name="arch" type="xml">
+        <form string="Item">
+            <header>
+               <button name="action_release" string="Release"  type="object" class="oe_highlight" 
+                        attrs="{'invisible':['|',('parent_id','!=',False),('state','!=','draft')]}" />
+               <button name="action_draft" string="To Draft" type="object"  
+                         attrs="{'invisible':['|',('parent_id','!=',False),('state','=','draft')]}"/>
+               <button name="action_processed" string="Processed" type="object" 
+                         attrs="{'invisible':['|',('parent_id','!=',False),('state','!=','released')]}"/>
+                         
+               <button name="action_validate" string="Valdiate Hierarchy" type="object" groups="base.group_no_one" 
+                         attrs="{'invisible':[('parent_id','!=',False)]}"/>
+                         
+               <field  name="state"  widget="statusbar" attrs="{'invisible':[('parent_id','!=',False)]}" />
+            </header>
+            <sheet string="Item">
+                <div class="oe_title">              
+                    <h1>
+                        <field name="name" default_focus="1" placeholder="Name" />                        
+                    </h1>
+                    <field name="root_id" attrs="{'invisible':[('parent_id','==',False)]}"/>
+                    <field name="section" class="oe_inline"/> 
+                    <field name="code" class="oe_inline" placeholder="Code"/>
+                    <span class="oe_inline">
+                        <field name="template" invisible="context.get('item_view',False)"/>
+                        <label for="template" invisible="context.get('item_view',False)"/>   
+                        <field name="active" invisible="context.get('item_view',False)"/>
+                        <label for="active" invisible="context.get('item_view',False)"/>
+                    </span>
+                </div>
+                <group>
+                    <group>
+                        <field name="required" attrs="{'invisible':['|',('section','=','10'),('parent_id','==',False)]}"/>                    
+                        <!-- reference type -->
+                        <field name="rtype"/>
+                        <field name="order_id" attrs="{'invisible':[('rtype','!=','order_id')]}"/>
+                        <field name="pricelist_id" attrs="{'invisible':[('rtype','!=','pricelist_id')]}"/>
+                        <field name="partner_id" attrs="{'invisible':[('rtype','!=','partner_id')]}"/>
+                        <field name="product_id" attrs="{'invisible':[('rtype','!=','product_id')]}"/>
+                        <!-- primitive type -->
+                        <field name="dtype"/>
+                        <field name="valf" attrs="{'invisible':[('dtype','!=','f')]}"/>
+                        <field name="vali" attrs="{'invisible':[('dtype','!=','i')]}"/>
+                        <field name="valb" attrs="{'invisible':[('dtype','!=','b')]}"/>
+                        <field name="vald" attrs="{'invisible':[('dtype','!=','d')]}"/>
+                        <field name="valc"/>
+                        <field name="valt"/>                        
+                    </group>     
+                    <group>           
+                        <field name="parent_id" invisible="context.get('item_view',False)" domain="[('id','!=',active_id),'!',('id','child_of',active_id)]"/>
+                        <field name="group"/>
+                        <field name="owner_id" invisible="context.get('item_view',False)" attrs="{'invisible':[('parent_id','!=',False)]}"/>
+                        <field name="write_date"/>
+                    </group>
+                </group>
+                <notebook>
+                    <page string="Childs">
+                        <div>
+                            <field name="child_ids" 
+                                context="{'item_view':True}">
+                                <tree>
+                                    <field name="sequence" widget="handle"/>
+                                    <button name="action_open" type="object" icon="gtk-edit"/>                            
+                                    <field name="code"/>                            
+                                    <field name="name"/>                            
+                                    <field name="value"/>
+                                    <field name="rtype" invisible="1"/>
+                                    <button name="action_link" type="object" icon="gtk-jump-to" attrs="{'invisible':[('rtype','=',False)]}"/>
+                                    <field name="section"/>
+                                </tree>                        
+                            </field>
+                        </div>
+                    </page>
+                    <page string="Rules">
+                        <div>
+                            <field name="rule_ids">
+                                <tree editable="buttom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="type"/>
+                                    <field name="xpath"/>                                    
+                                </tree>
+                            </field>
+                        </div>
+                    </page>
+                </notebook>
+                
+            </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="tree_fclipboard_item" model="ir.ui.view">
+      <field name="name">fclipboard.tree_fclipboard_item</field>
+      <field name="model">fclipboard.item</field>
+      <field name="arch" type="xml">
+        <tree string="Items" colors="blue:state == 'draft';red:state == 'released'">            
+            <field name="name"/>                
+            <field name="section"/>     
+            <field name="parent_id"/>
+            <field name="template"/>
+            <field name="owner_id"/>            
+            <field name="value"/>
+            <field name="state"/>
+            <field name="write_date"/>            
+        </tree>
+      </field>
+    </record>
+
+    <record id="search_fclipboard_item" model="ir.ui.view">
+      <field name="name">fclipboard.search_fclipboard_item</field>
+      <field name="model">fclipboard.item</field>
+      <field name="arch" type="xml">
+        <search string="Item">         
+            <field name="name"/>
+            <field name="code"/>
+            <field name="dtype"/>
+            <field name="rtype"/>
+            <field name="parent_id"/>
+            <filter string="Document" name="document" domain="[('parent_id','=',False),('template','=',False)]"/>
+            <filter string="Template" name="template" domain="[('template','=',True)]"/>
+            <group expand="1" string="Group By...">
+                <filter string="Parent" context="{'group_by': 'parent_id'}" />
+            </group>          
+        </search>
+      </field>
+    </record>
+
+    <record id="action_fclipboard_item" model="ir.actions.act_window">
+      <field name="name">Item</field>
+      <field name="res_model">fclipboard.item</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="context">{"search_default_document":1 }</field>  
+    </record>
+    
+    <record id="action_fclipboard_item_open" model="ir.actions.act_window">
+      <field name="name">Item</field>
+      <field name="res_model">fclipboard.item</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">form</field>
+      <field name="context">{"item_view":1}</field>  
+    </record>
+
+    <menuitem id="menu_fclipboard_item" name="Clipboard" parent="base.menu_sales"
+      sequence="10"
+      action="action_fclipboard_item"/>
+  </data>
+</openerp>

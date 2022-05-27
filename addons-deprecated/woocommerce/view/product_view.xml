@@ -1,0 +1,36 @@
+<openerp>
+  <data>
+  
+    <record id="form_product_template" model="ir.ui.view">
+      <field name="name">woocommerce.form_product_template</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="product.product_template_form_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//form/sheet/notebook" position="inside">
+          <page string="WooCommerce">
+              <group>               
+                <group>
+                  <field name="wc_sync"/>
+                </group>
+                <group>
+                 <div>
+                 
+                    <button name="action_wc_sync_enable" type="object" 
+                      class="oe_highlight"
+                      string="Enable" 
+                      attrs="{'invisible':[('wc_sync','=',True)]}"/>
+                      
+                    <button name="action_wc_sync_disable" type="object" 
+                      string="Disable" 
+                      attrs="{'invisible':[('wc_sync','=',False)]}"/>
+                      
+                  </div>
+                </group>
+              </group>
+          </page>
+        </xpath>
+      </field>
+    </record>
+      
+  </data>
+</openerp>
