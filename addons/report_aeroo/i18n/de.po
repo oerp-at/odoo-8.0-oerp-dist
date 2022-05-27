@@ -1,0 +1,410 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* report_aeroo
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-18 13:25+0000\n"
+"PO-Revision-Date: 2015-11-18 14:27+0100\n"
+"Last-Translator: Martin Reisenhofer <martin.reisenhofer@funkring.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.5.4\n"
+
+#. module: report_aeroo
+#: field:ir.actions.report.xml,active:0
+msgid "Active"
+msgstr "Aktiv"
+
+#. module: report_aeroo
+#: field:res.company,stylesheet_landscape_id:0
+msgid "Aeroo Global Landscape Stylesheet"
+msgstr "Globale Vorlage (Querformat)"
+
+#. module: report_aeroo
+#: field:res.company,stylesheet_id:0
+msgid "Aeroo Global Stylesheet"
+msgstr "Globale Vorlage"
+
+#. module: report_aeroo
+#: field:res.company,stylesheet_intern_landscape_id:0
+msgid "Aeroo Intern Landscape Stylesheet"
+msgstr "Interne Vorlage (Querformat)"
+
+#. module: report_aeroo
+#: field:res.company,stylesheet_intern_id:0
+msgid "Aeroo Intern Stylesheet"
+msgstr "Interne Vorlage"
+
+#. module: report_aeroo
+#: view:ir.actions.report.xml:report_aeroo.form_aeroo_report
+msgid "Aeroo Report"
+msgstr "Aeroo Bericht"
+
+#. module: report_aeroo
+#: model:ir.ui.menu,name:report_aeroo.menu_ir_action_aeroo_reports_xml
+msgid "Aeroo Reports"
+msgstr ""
+
+#. module: report_aeroo
+#: code:addons/report_aeroo/report_aeroo.py:541
+#, python-format
+msgid "Aeroo Reports: Error while generating the report."
+msgstr "Fehler während der Erstellung des Berichts"
+
+#. module: report_aeroo
+#: view:ir.actions.report.xml:report_aeroo.form_aeroo_report
+msgid "Attachment"
+msgstr "Anhang"
+
+#. module: report_aeroo
+#: code:addons/report_aeroo/report_xml.py:222
+#, python-format
+msgid "Attachments not defined for report %s"
+msgstr "Für den Report %s wurden keine Anhänge gefunden"
+
+#. module: report_aeroo
+#: field:ir.actions.report.xml,charset:0
+msgid "Charset"
+msgstr "Zeichensatz"
+
+#. module: report_aeroo
+#: field:report.mimetypes,code:0
+msgid "Code"
+msgstr ""
+
+#. module: report_aeroo
+#: model:ir.model,name:report_aeroo.model_res_company
+msgid "Companies"
+msgstr "Unternehmen"
+
+#. module: report_aeroo
+#: field:report.mimetypes,compatible_types:0
+msgid "Compatible Mime-Types"
+msgstr "Kompatible Mime-Typen"
+
+#. module: report_aeroo
+#: field:report.mimetypes,create_uid:0 field:report.stylesheets,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: report_aeroo
+#: field:report.mimetypes,create_date:0 field:report.stylesheets,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: report_aeroo
+#: selection:ir.actions.report.xml,tml_source:0
+msgid "Database"
+msgstr "Datenbank"
+
+#. module: report_aeroo
+#: selection:ir.actions.report.xml,parser_state:0
+msgid "Default"
+msgstr "Standard"
+
+#. module: report_aeroo
+#: selection:ir.actions.report.xml,parser_state:0
+msgid "Definition"
+msgstr ""
+
+#. module: report_aeroo
+#: code:addons/report_aeroo/report_aeroo.py:262
+#: code:addons/report_aeroo/report_aeroo.py:265
+#: code:addons/report_aeroo/report_xml.py:218
+#: code:addons/report_aeroo/report_xml.py:222
+#: code:addons/report_aeroo/report_xml.py:226
+#, python-format
+msgid "Error!"
+msgstr "Fehler!"
+
+#. module: report_aeroo
+#: code:addons/report_aeroo/report_aeroo.py:245
+#, python-format
+msgid "Error! Include document not available!"
+msgstr "Fehler! Eingebettetes Dokument nicht vorhanden!"
+
+#. module: report_aeroo
+#: code:addons/report_aeroo/report_aeroo.py:271
+#, python-format
+msgid "Error! Not file found:"
+msgstr "Fehler! Datei wurde nicht gefunden"
+
+#. module: report_aeroo
+#: code:addons/report_aeroo/report_aeroo.py:291
+#, python-format
+msgid "Error! Subreports not available!"
+msgstr "Fehler! Eingebundener Report nicht verfügbar!"
+
+#. module: report_aeroo
+#: field:report.mimetypes,extension:0
+msgid "Extension"
+msgstr "Erweiterung"
+
+#. module: report_aeroo
+#: selection:ir.actions.report.xml,tml_source:0
+msgid "File"
+msgstr "Datei"
+
+#. module: report_aeroo
+#: field:report.mimetypes,filter_name:0
+msgid "Filter Name"
+msgstr ""
+
+#. module: report_aeroo
+#: code:addons/report_aeroo/report_aeroo.py:541
+#, python-format
+msgid "For more reference inspect error logs."
+msgstr "Für mehr Informationen schauen sie ins Log."
+
+#. module: report_aeroo
+#: view:ir.actions.report.xml:report_aeroo.form_aeroo_report
+msgid "Format"
+msgstr ""
+
+#. module: report_aeroo
+#: selection:ir.actions.report.xml,styles_mode:0
+msgid "Global"
+msgstr ""
+
+#. module: report_aeroo
+#: selection:ir.actions.report.xml,styles_mode:0
+msgid "Global (Landscape)"
+msgstr "Global (Querformat)"
+
+#. module: report_aeroo
+#: view:ir.actions.report.xml:report_aeroo.act_aeroo_report_xml_search_view
+msgid "Group By"
+msgstr "Gruppierung"
+
+#. module: report_aeroo
+#: code:addons/report_aeroo/report_aeroo.py:259
+#, python-format
+msgid "HTTP Error 404! Not file found:"
+msgstr "HTTP Fehler 404! Datei wurde nicht gefunden:"
+
+#. module: report_aeroo
+#: field:report.mimetypes,id:0 field:report.stylesheets,id:0
+msgid "ID"
+msgstr ""
+
+#. module: report_aeroo
+#: selection:ir.actions.report.xml,styles_mode:0
+msgid "Intern"
+msgstr ""
+
+#. module: report_aeroo
+#: selection:ir.actions.report.xml,styles_mode:0
+msgid "Intern (Landscape)"
+msgstr "Intern (Querformat)"
+
+#. module: report_aeroo
+#: field:report.mimetypes,write_uid:0 field:report.stylesheets,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: report_aeroo
+#: field:report.mimetypes,write_date:0 field:report.stylesheets,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: report_aeroo
+#: selection:ir.actions.report.xml,parser_state:0
+msgid "Location"
+msgstr "Pfad"
+
+#. module: report_aeroo
+#: field:report.mimetypes,mimetype:0
+msgid "Mimetype"
+msgstr ""
+
+#. module: report_aeroo
+#: code:addons/report_aeroo/report_xml.py:226
+#, python-format
+msgid "Model %s not found"
+msgstr "Datenmodell %s wurde nicht gefunden"
+
+#. module: report_aeroo
+#: field:report.mimetypes,name:0 field:report.stylesheets,name:0
+msgid "Name"
+msgstr ""
+
+#. module: report_aeroo
+#: code:addons/report_aeroo/report_xml.py:218
+#, python-format
+msgid "No report with report_name=%s found"
+msgstr "Bericht report_name=%s existiert nicht"
+
+#. module: report_aeroo
+#: selection:ir.actions.report.xml,styles_mode:0
+msgid "Not used"
+msgstr "Nicht benutzt"
+
+#. module: report_aeroo
+#: help:report.stylesheets,report_styles:0
+msgid "OpenOffice.org stylesheet (.odt)"
+msgstr "OpenOffice.org Vorlage (.odt)"
+
+#. module: report_aeroo
+#: view:ir.actions.report.xml:report_aeroo.act_aeroo_report_xml_search_view
+#: field:ir.actions.report.xml,out_format:0
+msgid "Output Mime-type"
+msgstr "Ausgabe Mime-Typ"
+
+#. module: report_aeroo
+#: view:ir.actions.report.xml:report_aeroo.form_aeroo_report
+#: selection:ir.actions.report.xml,tml_source:0
+msgid "Parser"
+msgstr ""
+
+#. module: report_aeroo
+#: field:ir.actions.report.xml,parser_def:0
+msgid "Parser Definition"
+msgstr ""
+
+#. module: report_aeroo
+#: field:ir.actions.report.xml,parser_loc:0
+msgid "Parser location"
+msgstr "Parser Pfad"
+
+#. module: report_aeroo
+#: help:ir.actions.report.xml,parser_loc:0
+msgid ""
+"Path to the parser location. Beginning of the path must be start with the "
+"module name!\n"
+"Like this: {module name}/{path to the parser.py file}"
+msgstr ""
+"Pfad zu Parser Klasse. Der Pfad muß mit dem Modulnamen beginnen!\n"
+"z.B.: {Modulname}/{Pfad zur parser.py Datei}"
+
+#. module: report_aeroo
+#: selection:ir.actions.report.xml,preload_mode:0
+msgid "Preload"
+msgstr "Vorher laden"
+
+#. module: report_aeroo
+#: field:ir.actions.report.xml,preload_mode:0
+msgid "Preload Mode"
+msgstr "Report Vorlade Modus"
+
+#. module: report_aeroo
+#: model:ir.model,name:report_aeroo.model_report
+msgid "Report"
+msgstr ""
+
+#. module: report_aeroo
+#: model:ir.model,name:report_aeroo.model_report_mimetypes
+msgid "Report Mime-Types"
+msgstr "Bericht Mime-Typen"
+
+#. module: report_aeroo
+#: view:report.stylesheets:report_aeroo.view_report_stylesheets_form
+msgid "Report Stylesheet"
+msgstr "Bericht Vorlage"
+
+#. module: report_aeroo
+#: model:ir.actions.act_window,name:report_aeroo.action_report_stylesheets
+#: model:ir.model,name:report_aeroo.model_report_stylesheets
+#: model:ir.ui.menu,name:report_aeroo.menu_report_stylesheets
+#: view:report.stylesheets:report_aeroo.view_report_stylesheets_tree
+msgid "Report Stylesheets"
+msgstr "Report Vorlagen"
+
+#. module: report_aeroo
+#: view:ir.actions.report.xml:report_aeroo.act_aeroo_report_xml_search_view
+#: view:ir.actions.report.xml:report_aeroo.act_aeroo_report_xml_view_tree
+msgid "Report xml"
+msgstr "Bericht in xml"
+
+#. module: report_aeroo
+#: model:ir.actions.act_window,name:report_aeroo.action_aeroo_report_xml_tree
+#: model:ir.ui.menu,name:report_aeroo.menu_ir_action_aeroo_report_xml
+msgid "Reports"
+msgstr "Berichte"
+
+#. module: report_aeroo
+#: view:ir.actions.report.xml:report_aeroo.form_aeroo_report
+msgid "Security"
+msgstr "Sicherheit"
+
+#. module: report_aeroo
+#: selection:ir.actions.report.xml,styles_mode:0
+msgid "Specified"
+msgstr "Spezifiziert"
+
+#. module: report_aeroo
+#: field:ir.actions.report.xml,parser_state:0
+msgid "State of Parser"
+msgstr "Parser Status"
+
+#. module: report_aeroo
+#: selection:ir.actions.report.xml,preload_mode:0
+msgid "Static"
+msgstr "Statisch"
+
+#. module: report_aeroo
+#: view:ir.actions.report.xml:report_aeroo.form_aeroo_report
+msgid "Style"
+msgstr ""
+
+#. module: report_aeroo
+#: view:ir.actions.report.xml:report_aeroo.form_aeroo_report
+msgid "Style/Format"
+msgstr ""
+
+#. module: report_aeroo
+#: field:ir.actions.report.xml,styles_mode:0
+msgid "Stylesheet"
+msgstr "Vorlage"
+
+#. module: report_aeroo
+#: view:ir.actions.report.xml:report_aeroo.form_aeroo_report
+msgid "Template"
+msgstr "Vorlage"
+
+#. module: report_aeroo
+#: view:ir.actions.report.xml:report_aeroo.form_aeroo_report
+msgid "Template Content"
+msgstr "Vorlage"
+
+#. module: report_aeroo
+#: view:ir.actions.report.xml:report_aeroo.act_aeroo_report_xml_search_view
+#: field:ir.actions.report.xml,in_format:0
+msgid "Template Mime-type"
+msgstr "Vorlagen Mime-Typ"
+
+#. module: report_aeroo
+#: view:ir.actions.report.xml:report_aeroo.act_aeroo_report_xml_search_view
+msgid "Template Source"
+msgstr "Vorlage"
+
+#. module: report_aeroo
+#: field:ir.actions.report.xml,stylesheet_id:0
+#: field:report.stylesheets,report_styles:0
+msgid "Template Stylesheet"
+msgstr "Vorlage"
+
+#. module: report_aeroo
+#: view:ir.actions.report.xml:report_aeroo.form_aeroo_report
+msgid "Template path"
+msgstr "Pfad zur Vorlage"
+
+#. module: report_aeroo
+#: field:ir.actions.report.xml,tml_source:0
+msgid "Template source"
+msgstr "Vorlage"
+
+#. module: report_aeroo
+#: model:ir.actions.act_window,name:report_aeroo.act_translations
+msgid "Translations"
+msgstr "Übersetzungen"
+
+#. module: report_aeroo
+#: field:ir.actions.report.xml,user_defined:0
+msgid "User Defined"
+msgstr "Benutzerdefiniert"
