@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+    <record id="form_fpos_printer" model="ir.ui.view">
+      <field name="name">fpos.form_fpos_printer</field>
+      <field name="model">fpos.printer</field>
+      <field name="arch" type="xml">
+        <form string="Printer">
+          <group name="Printer">
+            <group>            
+                <field name="name"/>
+                <field name="description"/>
+                <field name="complete_name" invisible="1"/>                            
+            </group>
+            <group>
+                <field name="local"/>
+                <field name="font_size"/>
+            </group>            
+          </group>
+          <group string="Categories">
+            <div>
+                <field name="pos_category_ids" />
+            </div>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="tree_fpos_printer" model="ir.ui.view">
+      <field name="name">fpos.tree_fpos_printer</field>
+      <field name="model">fpos.printer</field>
+      <field name="arch" type="xml">
+        <tree string="Printer">
+            <field name="description"/>
+            <field name="name"/>
+            <field name="local"/>
+            <field name="font_size"/>
+            <field name="pos_category_ids" widget="many2many_tags"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="search_fpos_printer" model="ir.ui.view">
+      <field name="name">fpos.search_fpos_printer</field>
+      <field name="model">fpos.printer</field>
+      <field name="arch" type="xml">
+        <search string="Printer">
+            <field name="complete_name"/>
+        </search>
+      </field>
+    </record>
+
+    <record id="action_fpos_printer" model="ir.actions.act_window">
+      <field name="name">Printer</field>
+      <field name="res_model">fpos.printer</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_fpos_printer" name="Printer" parent="menu_fpos"
+      sequence="12"
+      action="action_fpos_printer"/>
+  </data>
+</openerp>
