@@ -1,0 +1,81 @@
+<openerp>
+  <data>
+    
+    <record id="search_product_template" model="ir.ui.view">
+      <field name="name">fpos.search_product_template</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="product.product_template_search_view"/>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+         <field name="categ_id" position="after">
+            <field name="pos_categ_id"/>
+            <field name="fpos_profile_ids"/>
+         </field>
+         <filter string="Category" position="after">
+            <filter name="pos_category" string="POS Category" domain="[]" context="{'group_by':'pos_categ_id'}"/>
+         </filter>
+      </field>
+    </record>
+       
+    <record id="tree_product_template" model="ir.ui.view">
+      <field name="name">fpos.tree_product_template</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="sequence" widget="handle"/>
+            </field>
+            <field name="categ_id" position="after">
+                <field name="pos_categ_id"/>
+            </field>   
+            <field name="uom_id" position="replace">
+                <field name="uom_id"/>
+                <field name="tmpl_pos_rate" widget="progressbar"/>    
+            </field>            
+            <field name="state" position="replace">
+                <field name="state" invisible="1"/>
+                <field name="netto_price"/>
+                <field name="brutto_price"/>
+            </field>   
+        </field>
+    </record>
+    
+    <record id="form_product_template_only" model="ir.ui.view">
+      <field name="name">fpos.form_product_template_only</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="product.product_template_only_form_view"/>
+      <field name="arch" type="xml">
+        <field name="default_code" position="after">    
+            <field name="sequence"/>
+        </field>
+        <field name="pos_categ_id" position="after">
+            <field name="pos_name"/>
+            <field name="pos_categ2_id"/>
+            <field name="fpos_profile_ids" widget="many2many_tags"/>
+            <field name="base_product_id"/>
+            <field name="pos_color"/>   
+            <field name="pos_fav"/>
+            <field name="pos_sec"/>
+            <field name="pos_action"/>    
+            <field name="pos_report"/>
+            <field name="pos_cm"/>
+        </field>
+        <group name="pos" position="after">
+            <group string="POS Input">
+                <field name="pos_price"/>
+                <field name="pos_nogroup"/>
+                <field name="pos_minus"/>
+                <field name="pos_price_pre"/>
+                <field name="pos_price_dec"/>
+                <field name="pos_amount_pre"/>
+                <field name="pos_amount_dec"/>                
+            </group>
+        </group>
+        
+      </field>
+    </record>
+    
+    
+
+   </data>
+</openerp>

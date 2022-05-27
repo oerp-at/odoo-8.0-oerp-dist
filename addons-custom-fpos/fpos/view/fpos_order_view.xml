@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+    <record id="form_fpos_order" model="ir.ui.view">
+      <field name="name">fpos.form_fpos_order</field>
+      <field name="model">fpos.order</field>
+      <field name="arch" type="xml">
+        <form string="Order">
+            <header>
+                <button name="correct" type="object" string="Correct"/>
+                <field name="state" widget="statusbar" statusbar_visible="draft,paid,done"/>
+            </header>
+            <sheet string="Sales">
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="date"/>                        
+                        <field name="seq"/>
+                        <field name="fpos_user_id"/>                        
+                        <field name="user_id"/>
+                        <field name="sv"/>
+                        <field name="sig"/> 
+                        <field name="st"/>
+                    </group>
+                    <group>                        
+                        <field name="company_id"/>
+                        <field name="currency_id"/>
+                        <field name="ref"/>
+                        <field name="partner_id"/>     
+                        <field name="ga"/>
+                        <field name="turnover"/>
+                        <field name="cpos"/>
+                        <field name="tag"/>                        
+                        <field name="cent_fix"/>                        
+                    </group> 
+                </group>
+                <notebook>
+                    <page string="Lines">
+                        <field name="line_ids">
+                            <tree  editable="bottom">
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>      
+                                <field name="tag"/>   
+                                <field name="config"/>                       
+                                <field name="product_id"/>
+                                <field name="qty"/>
+                                <field name="tara"/>
+                                <field name="uom_id"/>
+                                <field name="price"/>
+                                <field name="discount"/>                            
+                                <field name="tax_ids" widget="many2many_tags"/>
+                                <field name="notice"/>
+                                <field name="subtotal_incl"/>                            
+                            </tree>
+                        </field>
+                        <group class="oe_subtotal_footer oe_right">
+                            <field name="amount_total" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <field name="amount_tax" widget="monetary" options="{'currency_field': 'currency_id'}"/>                            
+                        </group>
+                        <group>
+                            <group string="Taxes">
+                                <div>
+                                    <field name="tax_ids">
+                                        <tree editable="bottom" string="Taxes">
+                                            <field name="name"/>
+                                            <field name="st"/>
+                                            <field name="amount_tax" sum="Tax"/>
+                                            <field name="amount_netto" sum="Netto"/>
+                                        </tree>
+                                    </field>                            
+                                </div>
+                            </group>                            
+                            <group string="Payment">
+                                <div>
+                                    <field name="payment_ids">
+                                        <tree string="Payments"> 
+                                            <field name="journal_id"/>
+                                            <field name="code"/>
+                                            <field name="amount" sum="Amount"/>
+                                            <field name="payment" sum="Payment"/>                                            
+                                        </tree>
+                                        <form string="Payment">
+                                            <group>
+                                                <group>
+                                                    <field name="journal_id"/>
+                                                    <field name="code"/>
+                                                </group>
+                                                <group>
+                                                    <field name="amount"/>
+                                                    <field name="payment"/>
+                                                </group>
+                                            </group>
+                                            <div>
+                                                <field name="receipt_ids">
+                                                    <tree string="Receipts">   
+                                                        <field name="name"/>                                                 
+                                                        <field name="tag"/>                                                        
+                                                    </tree>
+                                                    <form>
+                                                        <group>
+                                                            <group>
+                                                                <field name="name"/>
+                                                            </group>
+                                                            <group>
+                                                                <field name="tag"/>
+                                                            </group>                                                            
+                                                        </group>
+                                                        <div>
+                                                            <field name="receipt"/>
+                                                        </div>                                                    
+                                                    </form>
+                                                </field>
+                                            </div>
+                                        </form>
+                                    </field>      
+                                </div>
+                            </group>
+                            <group string="Log">
+                                <div>
+                                    <field name="log_ids">
+                                        <tree string="Log">
+                                            <field name="date"/>
+                                            <field name="fpos_user_id"/>
+                                            <field name="user_id"/>
+                                        </tree>
+                                        <form string="Log">
+                                                <group>
+                                                    <group>
+                                                        <group>
+                                                            <field name="date"/>
+                                                        </group>
+                                                        <group>
+                                                            <field name="fpos_user_id"/>
+                                                            <field name="user_id"/>                                                
+                                                        </group>
+                                                    </group>
+                                                </group>
+                                                <div>
+                                                    <field name="line_ids">
+                                                        <tree>                                                    
+                                                            <field name="product_id"/>
+                                                            <field name="name"/>
+                                                            <field name="qty"/>
+                                                            <field name="uom_id"/>                                                   
+                                                            <field name="notice"/>
+                                                        </tree>
+                                                    </field>
+                                                </div>
+                                            
+                                        </form>
+                                    </field >
+                                </div>
+                            </group>
+                            <group string="Note">
+                                <div>
+                                <field name="note"/>
+                                </div>
+                            </group>
+                        </group>
+                    </page>
+                    <page string="Signature">
+                        <label for="dep"/>
+                        <div>                        
+                            <field name="dep"/>
+                        </div>
+                        <label for="qr"/>
+                        <div>
+                            <field name="qr"/>
+                        </div>
+                        <label for="hs"/>
+                        <div>
+                            <field name="hs"/>
+                        </div>
+                    </page>
+                </notebook>
+            </sheet>          
+        </form>
+      </field>
+    </record>
+
+    <record id="tree_fpos_order" model="ir.ui.view">
+      <field name="name">fpos.tree_fpos_order</field>
+      <field name="model">fpos.order</field>
+      <field name="arch" type="xml">
+        <tree string="Orders">
+            <field name="date"/>
+            <field name="fpos_user_id"/>
+            <field name="user_id"/>        
+            <field name="name"/>
+            <field name="seq"/>
+            <field name="st"/>
+            <field name="tag"/>
+            <field name="ref"/>
+            <field name="partner_id"/>
+            <field name="amount_tax" sum="Tax"/>
+            <field name="amount_total" sum="Amount"/>
+            <field name="cent_fix"/>
+            <field name="state"/>
+            <field name="active"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="search_fpos_order" model="ir.ui.view">
+      <field name="name">fpos.search_fpos_order</field>
+      <field name="model">fpos.order</field>
+      <field name="arch" type="xml">
+        <search string="Order">
+            <field name="name"/>
+            <field name="tag"/>
+            <field name="st"/>
+            <field name="ref"/>
+            <field name="fpos_user_id"/>
+            <field name="user_id"/>
+            <field name="partner_id"/>            
+            <group expand="0" string="Group By...">
+                <filter string="By Device" name="fpos_user_id" context="{'group_by':'fpos_user_id'}"/>
+                <filter string="By User" name="user_id" context="{'group_by':'user_id'}"/>
+                <filter string="By Partner" name="partner_id" context="{'group_by':'partner_id'}"/>
+            </group>
+        </search>
+      </field>
+    </record>
+
+    <record id="action_fpos_order" model="ir.actions.act_window">
+      <field name="name">Order</field>
+      <field name="res_model">fpos.order</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_fpos_order" name="Sales" parent="menu_fpos"
+      sequence="10"
+      action="action_fpos_order"/>
+  </data>
+</openerp>

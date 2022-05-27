@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+ <data>
+    <record id="form_pos_config" model="ir.ui.view">
+      <field name="name">fpos.form_pos_config</field>
+      <field name="model">pos.config</field>
+      <field name="inherit_id" ref="point_of_sale.view_pos_config_form"/>
+      <field name="arch" type="xml">
+            <button name="set_deprecate" position="after">
+                <button name="action_liveop" string="Live Operation" type="object" groups="base.group_system"
+                        attrs="{'invisible' : ['|',('user_id','=',False),('liveop','=',True)]}"/>
+                <button name="action_sign_config" string="Signature Config" type="object" groups="base.group_system"
+                        attrs="{'invisible' : ['|','|',('sign_method','=',False),('liveop','=',False),('sign_status','!=','draft')]}"/>                
+                <button name="action_sign_reactivate" string="(Re)Activate Signature" type="object" groups="base.group_system"
+                        attrs="{'invisible' : ['|','|',('sign_method','=',False),('liveop','=',False),('sign_status','in',['draft','react'])]}"/>
+                <button name="action_post" string="Post Orders" type="object" groups="point_of_sale.group_pos_manager" 
+                        attrs="{'invisible' : ['|',('user_id','=',False),('liveop','=',False)]}"/>
+                <button name="action_dep_download" string="DEP Download" type="object" groups="point_of_sale.group_pos_user" 
+                        attrs="{'invisible' : ['|','|',('sign_method','=',False),('liveop','=',False),('sign_status','=','draft')]}"/>
+            </button>
+            <field name="group_by" position="after">
+                <field name="fpos_profile_ids" widget="many2many_tags"/>
+            </field>
+            <field name="iface_invoicing" position="before">
+                <field name="iface_waiterkey"/>
+                <field name="iface_place"/>                
+                <field name="iface_user_nobalance"/>
+                <field name="iface_user_printsales"/>
+                <field name="iface_receipt"/>
+                <field name="liveop" invisible="1"/>        
+            </field>
+            <field name="iface_big_scrollbars" position="after">
+                <field name="iface_desktop"/>
+                <field name="iface_nogroup"/>
+                <field name="iface_autofav"/>
+                <field name="iface_fold"/>                
+                <field name="iface_fastuswitch"/>                
+                <field name="iface_nosearch"/>
+                <field name="iface_printleft"/>
+                <field name="iface_hidecat"/>
+                <field name="iface_ponline"/>        
+                <field name="iface_test"/>                
+            </field>            
+            <field name="picking_type_id" position="before">
+                <field name="user_id" string="Fpos User" attrs="{'readonly': [('liveop','=',True)]}"/>
+                <field name="parent_user_id" string="Fpos Parent User"/>
+                <field name="fpos_model"/>
+                <field name="fpos_prefix"/>                
+            </field>
+            <group string="Features" position="inside">
+                <group string="Auto Income/Expense/Payment">
+                    <field name="fpos_income_id"/>
+                    <field name="fpos_expense_id"/>
+                    <field name="fpos_payment_id"/>
+                    <field name="fpos_1nd_journal_id"/>
+                    <field name="fpos_2nd_journal_id"/>
+                </group>                
+                <group string="Distribution">                    
+                    <field name="fpos_printer_ids" widget="many2many_tags"/>
+                    <field name="fpos_dist_ids" widget="many2many_tags"/>
+                    <field name="fpos_sync_clean"/>
+                    <field name="fpos_sync_count"/>
+                    <field name="fpos_sync_version"/>
+                    <field name="fpos_sync_reset"/>
+                    <field name="fpos_sync_realtime"/>
+                    <field name="fpos_query_stock"/>
+                </group>
+            </group>
+            <group string="Hardware Proxy" position="replace">
+                <group>
+                    <group string="Hardware Proxy">
+                        <field name="fpos_hwproxy_id"/>
+                        <field name="proxy_ip" attrs="{'invisible':[('fpos_hwproxy_id','!=',False)]}"/>
+                        <field name="iface_print_via_proxy" />
+                        <field name="iface_scan_via_proxy" />
+                        <field name="iface_electronic_scale" />
+                        <field name="iface_cashdrawer" />
+                        <field name="iface_trigger"/>
+                    </group>
+                    <group string="Signature">                                                
+                        <field name="sign_method" attrs="{'readonly': [('sign_status','!=','draft')]}" on_change="onchange_sign_method(sign_method, sign_status, sign_serial, sign_cid, sign_pid, sign_key, fpos_prefix, company_id)"/>
+                        <field name="sign_status" attrs="{'invisible': [('sign_method','=',False)]}"/>
+                        <field name="sign_serial" attrs="{'invisible': [('sign_method','=',False)], 'readonly':['!',('sign_status','in',['draft','react'])], 'required':[('sign_method','!=',False)]}"/>
+                        <field name="sign_cid" attrs="{'invisible':[('sign_method','=',False)], 'readonly':[('sign_status','!=','draft')], 'required':[('sign_method','!=',False)]}" />
+                        <field name="sign_pid" attrs="{'invisible':[('sign_method','=',False)], 'readonly':[('sign_status','!=','draft')], 'required':[('sign_method','!=',False)]}" />
+                        <field name="sign_key" attrs="{'invisible':[('sign_method','=',False)], 'readonly':[('sign_status','!=','draft')], 'required':[('sign_method','!=',False)]}" />
+                        <field name="sign_crc" attrs="{'invisible':['|',('sign_method','=',False),('sign_status','=','draft')]}"/>
+                        <field name="sign_certs" attrs="{'invisible':['|',('sign_method','=',False),('sign_status','!=','active')]}"/>
+                        <field name="sign_user" attrs="{'invisible':[('sign_method','!=','online')], 'readonly':['!',('sign_status','in',['draft','react'])], 'required':[('sign_method','=','online')] }"/>                        
+                        <field name="sign_password" attrs="{'invisible':[('sign_method','!=','online')], 'readonly':['!',('sign_status','in',['draft','react'])], 'required':[('sign_method','=','online')] }"/>
+                        <field name="dep_key" attrs="{'invisible' : ['|','|',('sign_method','=',False),('liveop','=',False),('sign_status','=','draft')]}"/>
+                    </group>
+                </group>
+            </group>   
+            <group string="Receipt" position="replace">
+                <group string="Receipt">
+                    <group>
+                        <div>
+                            <label for="receipt_header" class="oe_edit_only"/>                            
+                            <field name="receipt_header" placeholder="A custom receipt header message"/>
+                            <label for="receipt_footer" class="oe_edit_only"/>
+                            <field name="receipt_footer" placeholder="A custom receipt footer message"/>
+                        </div>
+                    </group>
+                    <group>                        
+                        <div>
+                            <field name="image_80mm" widget="image" class="oe_avatar oe_left"/>
+                        </div>
+                    </group>
+                </group>               
+                <group string="User" colspan="4">                  
+                    <div>
+                        <field name="user_ids"/>
+                    </div>
+                </group>
+                <group string="Payment Interfaces">                        
+                    <div>
+                        <field name="payment_iface_ids">
+                            <tree editable="buttom">
+                                <field name="journal_id" domain="[('id','in',parent.journal_ids[0][2]),('type','!=','cash')]"/>
+                                <field name="iface"/>
+                            </tree>
+                        </field>
+                    </div>
+                </group>
+            </group>
+      </field>
+    </record>
+  </data>
+</openerp>

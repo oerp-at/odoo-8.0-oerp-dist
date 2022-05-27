@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+ <data>
+    <record id="form_account_journal" model="ir.ui.view">
+      <field name="name">fpos.form_account_journal</field>
+      <field name="model">account.journal</field>
+      <field name="inherit_id" ref="point_of_sale.view_account_journal_pos_user_form"/>
+      <field name="arch" type="xml">
+        <page string="Point of Sale" position="inside">
+            <group string="Processing">
+                <field name="fpos_invoice"/>
+                <field name="fpos_invoice_email" attrs="{'invisible': [('fpos_invoice','!=',True)]}"/>
+                <field name="fpos_noreconcile"/>            
+                <field name="fpos_atomic"/>
+                <field name="fpos_noturnover" attrs="{'invisible': ['|',('fpos_atomic','!=',True),('type','=','cash')]}"/>
+                <field name="fpos_group" attrs="{'invisible': ['|',('fpos_noturnover','!=',True),('type','=','cash')]}"/>
+                <field name="fpos_partner_id" attrs="{'invisible':[('fpos_group','!=',True)], 'required':[('fpos_group','=',True)]}"/>
+            </group>    
+        </page>
+      </field>
+    </record>
+  </data>
+</openerp>

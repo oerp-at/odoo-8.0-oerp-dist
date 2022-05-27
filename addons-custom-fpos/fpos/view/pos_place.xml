@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+    <record id="form_pos_place" model="ir.ui.view">
+      <field name="name">fpos.form_pos_place</field>
+      <field name="model">fpos.place</field>
+      <field name="arch" type="xml">
+        <form string="Place">
+            <sheet>
+                <div class="oe_title">
+                    <label class="oe_edit_only" for="name"/>
+                    <h1><field name="name" class="oe_inline"/></h1>
+                    <label class="oe_edit_only" for="top_id"/>
+                    <field name="top_id" class="oe_inline"/>
+                </div>
+                <group>
+                    <group>
+                        <field name="pos_unavail"/>
+                        <field name="pos_color"/>
+                    </group>
+                    <group>
+                        <field name="active"/>
+                        <field name="sequence"/>
+                    </group>
+                </group>
+            </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="tree_pos_place" model="ir.ui.view">
+      <field name="name">fpos.tree_pos_place</field>
+      <field name="model">fpos.place</field>
+      <field name="arch" type="xml">
+        <tree string="Places">
+            <field name="sequence" widget="handle"/>            
+            <field name="name"/>
+            <field name="top_id"/>
+            <field name="pos_color"/>     
+            <field name="pos_unavail"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="search_pos_place" model="ir.ui.view">
+      <field name="name">fpos.search_pos_place</field>
+      <field name="model">fpos.place</field>
+      <field name="arch" type="xml">
+        <search string="Place">
+          <field name="name" filter_domain="[('name','ilike',self)]"/>
+          <field name="top_id"/>
+          <filter string="Unavailable" domain="[('pos_unavail','=',True)]"/>
+          <filter string="Available" domain="[('pos_unavail','=',False)]"/>
+          <group expand="0" string="Group By...">
+            <filter string="Top" context="{'group_by': 'top_id'}"/>
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <record id="action_pos_place" model="ir.actions.act_window">
+      <field name="name">Places</field>
+      <field name="res_model">fpos.place</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>      
+    </record>
+
+    <menuitem id="menu_pos_place" name="Places" parent="menu_areas"
+      sequence="20"
+      action="action_pos_place"/>
+      
+  </data>
+</openerp>
