@@ -1,0 +1,108 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* report_aeroo_ooo
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-18 13:25+0000\n"
+"PO-Revision-Date: 2015-11-18 14:29+0100\n"
+"Last-Translator: Martin Reisenhofer <martin.reisenhofer@funkring.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.5.4\n"
+
+#. module: report_aeroo_ooo
+#: model:ir.actions.act_window,name:report_aeroo_ooo.action_aeroo_report_settings
+#: model:ir.ui.menu,name:report_aeroo_ooo.menu_aeroo_report_settings
+msgid "Aeroo Report"
+msgstr ""
+
+#. module: report_aeroo_ooo
+#: model:ir.model,name:report_aeroo_ooo.model_aeroo_report_config
+msgid "Aeroo Report Configuration"
+msgstr "Aeroo Report Konfiguration"
+
+#. module: report_aeroo_ooo
+#: view:aeroo.report.config:report_aeroo_ooo.form_aeroo_report_settings
+msgid "Apply"
+msgstr "Anwenden"
+
+#. module: report_aeroo_ooo
+#: view:aeroo.report.config:report_aeroo_ooo.form_aeroo_report_settings
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#. module: report_aeroo_ooo
+#: view:aeroo.report.config:report_aeroo_ooo.form_aeroo_report_settings
+msgid "Configure Aeroo Reports"
+msgstr "Aeroo Report Konfiguration"
+
+#. module: report_aeroo_ooo
+#: field:aeroo.report.config,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: report_aeroo_ooo
+#: field:aeroo.report.config,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: report_aeroo_ooo
+#: help:aeroo.report.config,port:0
+msgid "Default is 8099"
+msgstr "Standard Port ist 8099"
+
+#. module: report_aeroo_ooo
+#: help:aeroo.report.config,host:0
+msgid "Default is localhost"
+msgstr "Standard host ist localhost"
+
+#. module: report_aeroo_ooo
+#: field:aeroo.report.config,host:0
+msgid "Host"
+msgstr ""
+
+#. module: report_aeroo_ooo
+#: field:aeroo.report.config,id:0
+msgid "ID"
+msgstr ""
+
+#. module: report_aeroo_ooo
+#: field:aeroo.report.config,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: report_aeroo_ooo
+#: field:aeroo.report.config,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: report_aeroo_ooo
+#: view:aeroo.report.config:report_aeroo_ooo.form_aeroo_report_settings
+msgid "OpenOffice/LibreOffice Proxy"
+msgstr ""
+
+#. module: report_aeroo_ooo
+#: field:aeroo.report.config,port:0
+msgid "Port"
+msgstr ""
+
+#. module: report_aeroo_ooo
+#: field:ir.actions.report.xml,process_sep:0
+msgid "Process separately"
+msgstr "Getrennt verarbeiten"
+
+#. module: report_aeroo_ooo
+#: view:aeroo.report.config:report_aeroo_ooo.form_aeroo_report_settings
+msgid "Test"
+msgstr ""
+
+#. module: report_aeroo_ooo
+#: view:aeroo.report.config:report_aeroo_ooo.form_aeroo_report_settings
+msgid "or"
+msgstr "oder"
